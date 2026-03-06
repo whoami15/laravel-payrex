@@ -1,0 +1,38 @@
+<?php
+
+declare(strict_types=1);
+
+namespace LegionHQ\LaravelPayrex\Facades;
+
+use Illuminate\Support\Facades\Facade;
+use LegionHQ\LaravelPayrex\PayrexClient;
+use LegionHQ\LaravelPayrex\Resources\BillingStatementLineItemResource;
+use LegionHQ\LaravelPayrex\Resources\BillingStatementResource;
+use LegionHQ\LaravelPayrex\Resources\CheckoutSessionResource;
+use LegionHQ\LaravelPayrex\Resources\CustomerResource;
+use LegionHQ\LaravelPayrex\Resources\PaymentIntentResource;
+use LegionHQ\LaravelPayrex\Resources\PaymentResource;
+use LegionHQ\LaravelPayrex\Resources\PayoutTransactionResource;
+use LegionHQ\LaravelPayrex\Resources\RefundResource;
+use LegionHQ\LaravelPayrex\Resources\WebhookResource;
+
+/**
+ * @method static PaymentIntentResource paymentIntents()
+ * @method static PaymentResource payments()
+ * @method static RefundResource refunds()
+ * @method static CustomerResource customers()
+ * @method static CheckoutSessionResource checkoutSessions()
+ * @method static WebhookResource webhooks()
+ * @method static BillingStatementResource billingStatements()
+ * @method static BillingStatementLineItemResource billingStatementLineItems()
+ * @method static PayoutTransactionResource payoutTransactions()
+ *
+ * @see PayrexClient
+ */
+class Payrex extends Facade
+{
+    protected static function getFacadeAccessor(): string
+    {
+        return PayrexClient::class;
+    }
+}
