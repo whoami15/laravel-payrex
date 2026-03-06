@@ -1,0 +1,6 @@
+parameters:
+    ignoreErrors:
+        -
+            message: '#Unsafe usage of new static\(\)#'
+            path: src/Exceptions/PayrexApiException.php
+            count: 1
